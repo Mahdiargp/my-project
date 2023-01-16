@@ -1,0 +1,10 @@
+repl : read eval print loop in terminal work 
+
+cli : 
+
+ // globals - no window 
+ // __dirname - apth tp current directory 
+ // __filename - file name 
+ // require - function to use module 
+ // module - info about current module (file)
+ // process - info about env where the program is being executed 
