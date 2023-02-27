@@ -1,8 +1,7 @@
-let x = 14;
-let y = 32;
-
-function helloworld(x , y) {
-    return x + y ;
+function myFunction(x, y) {
+    return x , y;
 }
+myFunction = (15 * 24)
+console.log(myFunction);
 
-console.log(helloworld);
+
