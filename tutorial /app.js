@@ -1,6 +1,7 @@
-const value = 77.66;
-const newValue = value.toFixed(1);
-console.log(newValue);
-console.log(typeof newValue);
+function Math(a, b) {
+    return a * b;
+  }
+  Math(10, 2);  
+  console.log(Math);
 
-//in project baraye kenar zdn adad ashar hast ba tashakor (:
+//befamaiid
