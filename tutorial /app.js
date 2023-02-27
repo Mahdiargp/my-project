@@ -1,7 +1,8 @@
-function Math(a, b) {
-    return a * b;
-  }
-  Math(10, 2);  
-  console.log(Math);
+let x = 14;
+let y = 32;
 
-//befamaiid
+function helloworld(x , y) {
+    return x + y ;
+}
+
+console.log(helloworld);
