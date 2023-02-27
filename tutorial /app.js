@@ -1,8 +1,6 @@
-const path = require('path');
+const value = 77.66;
+const newValue = value.toFixed(1);
+console.log(newValue);
+console.log(typeof newValue);
 
-console.log(path.sep);
-
-const  filePath = path.join('/content/', 'subfolder', 'test.txt')
-console.log(filePath);    
-
-//path module 
+//in project baraye kenar zdn adad ashar hast ba tashakor (:
