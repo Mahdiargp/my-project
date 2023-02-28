@@ -1,7 +1,6 @@
-function myFunction(x, y) {
-    return x , y;
+function math(x,y) {
+    console.log(x * y);
 }
-myFunction = (15 * 24)
-console.log(myFunction);
+math(15, 43);
 
-
+//befarmaeid (:
