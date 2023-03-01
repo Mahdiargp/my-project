@@ -1,11 +1,4 @@
-function math(x,y) {
-    console.log(x * y);
-    
-    if(x > y) {
-        console.log("x bigger than y"); 
-        } else {
-            console.log("y bigger than x");
-        }
-    }
-math(15, 43);
-
+function helloworld(a, b, c) {
+    console.log( a * b * c);
+}
+helloworld(5, 6, 7)
