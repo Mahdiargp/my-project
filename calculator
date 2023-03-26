@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>javascript calculator</title>
+
+<style>
+
+        body {
+    background-color: rgb(232, 143, 88);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.screen {
+    width: 224px;
+    background-color: red;
+    font-size: 40px;
+    text-align: end;
+    padding: 4px;
+}
+
+.calculator {
+    background-color: rgb(207, 191, 191);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.buttons {
+    width: 232px ;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+button {
+    background-color: rgb(233, 58, 0);
+    border: none;
+    color: rgb(255, 255, 255);
+    font-size: 40px;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    margin: 4px;
+}
+
+button:hover {
+    background-color: rgb(111,110,110);
+}
+
+button:active {
+    background-color: rgb(232,232,232);
+}
+
+#equals {
+    background-color: rgb(110, 86, 133);
+}
+
+#equals:hover {
+    background-color: rgb(97, 111, 122);
+}
+
+#clear {
+    width: 100%;
+    background-color: rgb(181, 100, 91);
+}
+
+#clear:hover {
+    background-color: rgb(190, 59, 59);
+}
+    </style>
+
+</head>
+<body>
+     <div class="calculator">
+        <div class = "screen">.</div>
+        <br/>
+        <div class="buttons">
+            <button>7</button>
+            <button>8</button>
+            <button>9</button>
+            <button>+</button>
+            <button>4</button>
+            <button>5</button>
+            <button>6</button>
+            <button>-</button>
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>*</button>
+            <button>0</button>
+            <button>.</button>
+            <button>/</button>
+            <button id="equals">=</button>
+        </div>
+        <br/>
+        <button id="clear">CLEAR</button>
+    </div> 
+
+    <script>
+
+        
+const buttons = document.querySelectorAll('button')
+const screenDisplay = document.querySelector('.screen')
+
+let calculation = [] 
+let accumulativeCalculation 
+
+function calculate(button) {
+
+    const value = button.textContent
+    if (value === "CLEAR") {
+        calculation = []
+        screenDisplay.textContent = "."
+    } else if (value === "=") {
+        screenDisplay.textContent = eval(accumulativeCalculation)
+    } else {  
+    calculation.push(value)
+    accumulativeCalculation = calculation.join('')
+    screenDisplay.textContent = accumulativeCalculation
+    }
+    
+}
+
+buttons.forEach(button => button.addEventListener('click', () => calculate(button)))
+
+    </script>
+</body>
+</html>
+
