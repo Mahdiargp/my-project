@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <style>
+      body {
+        font-family: system-ui;
+        background: #f06d06;
+        color: white;
+        text-align: center;
+      }
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+      }
+      .ttt {
+        width: 40px;
+        height: 30px;
+        padding: 5px;
+        margin-right: 5px;
+        font-size: 14px;
+      }
+      button {
+        margin-top: 10px;
+        padding: 10px 20px;
+        font-size: 16px;
+      }
+      span {
+        display: inline-block;
+        padding: 10px;
+        margin: 5px;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 4px;
+      }
+      .green {
+        background-color: green;
+      }
+      .yellow {
+        background-color: yellow;
+        color: black;
+      }
+      .red {
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" class="ttt" />
+    <input type="text" class="ttt" />
+    <input type="text" class="ttt" />
+    <input type="text" class="ttt" />
+    <input type="text" class="ttt" />
+    <button onclick="submitInputs()">submit</button>
+    <div class="container"></div>
+
+    <script>
+      const container = document.querySelector(".container");
+      const text = "24589";
+      let wrongAttempts = 0;
+
+      function submitInputs() {
+        const inputList = document.querySelectorAll(".ttt");
+        let allCorrect = true;
+
+        inputList.forEach((item, index) => {
+          let className = "";
+
+          if (text.includes(item.value)) {
+            if (text.indexOf(item.value) == index) {
+              className = "green";
+            } else {
+              className = "yellow";
+            }
+          } else {
+            className = "red";
+            allCorrect = false;
+          }
+
+          console.log(
+            index,
+            item.value,
+            text.includes(item.value),
+            text.indexOf(item.value)
+          );
+
+          container.insertAdjacentHTML(
+            "beforeend",
+            `<span class="${className}">${item.value}</span>`
+          );
+        });
+
+        if (allCorrect) {
+          alert("you win");
+        } else {
+          wrongAttempts++;
+          if (wrongAttempts >= 3) {
+            alert("you lose");
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
